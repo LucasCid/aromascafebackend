@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "comerceOrder": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "completed",
+        "failed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "required": true
+    },
+    "items": {
+      "type": "text"
+    },
+    "flowToken": {
+      "type": "string",
+      "unique": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "paidAt": {
+      "type": "datetime"
+    }
+  }
+}
